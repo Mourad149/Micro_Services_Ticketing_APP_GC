@@ -20,7 +20,7 @@ export const currentUser = (
   next: NextFunction
 ) => {
   if (!req.session?.jwt) {
-    return res.send({ currentUser: null });
+    return next();
   }
 
   try {
